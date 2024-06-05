@@ -1,53 +1,54 @@
+#Idealmente, dejar las funciones dentro de un archivo aparte para luego llamarlas...
+#...en el archivo principal
 """
-Resolución actividad día Lunes
+Funciones
+
+-Con parámetros
+-Sin parámetros
+-Con retorno
+-Sin retorno
 """
-import random;
-import time;
+#ejemplo de una función sin parámetros y sin retorno.
 
-lista=[];
-lista_usuario=[];
-lista_ganadora=[];
-contador=0;
+def sumar_dos_numeros():
 
-print("\nBienvenido a Lotería Vargas\n");
-while contador<5:
-    num=int(input("Ingresa tus 5 números de la suerte: "));
-    lista_usuario.append(num);
-    contador+=1;
-print(f"\nSus números de la suerte son: {lista_usuario}");
+    num1=int(input("Ingresa un número: "));
+    num2=int(input("Ingresa otro número: "));
+    suma=num1+num2;
+    print(f"La suma es: {suma}");
+#Llamar a la función sin parámetros
+#sumar_dos_numeros();
 
-for lista in range(5):
-    while True:
-        num_aleatorio=random.randint(1,21);
-        time.sleep(1);
-        print(f"Se generó el siguiente número: {num_aleatorio}");
-        if num_aleatorio not in lista_ganadora:
-            lista_ganadora.append(num_aleatorio);
-            break;
+#ejemplo de una función con parámetros y con retorno
+def sumar_dos_numeros_parametros(num1,num2):
+    suma=(num1+num2);
+    print(f"La suma es: {suma}");
 
-print(f"Los números de la lista ganadora son: {lista_ganadora}");
-
-for x in lista_usuario:
-    if x in lista_ganadora:
-        print(f"Usted ha acertado en: {x}");
-        contador+=1;
-
-if contador==5:
-    print("Usted se ganó la Lotería. \n!!!!!FELICIDADES!!!!!!");
-else:
-    print("Usted no ganó. Viva la ludopatía!!!!");
+#Llamar a la función con parámetros
+#sumar_dos_numeros_parametros(8,23);
 
 
+#ejemplo de una función sin parámetros y con retorno.
+
+def sumar_dos_numeros_retorno():
+
+    num1=int(input("Ingresa un número: "));
+    num2=int(input("Ingresa otro número: "));
+    suma=num1+num2;
+    return suma;
+#Llamar a la función con retorno
+#suma=sumar_dos_numeros_retorno();
+#print(f"El resultado de la suma es: {suma}");
 
 
+#ejemplo de una función con parámetros y con retorno.
 
-
-
-
-
-
-
-
+def sumar_dos_numeros_parametro_y_retorno(num1,num2):
+    suma=num1+num2;
+    return suma;
+#Llamar a la función con parámetros y con retorno
+#suma=sumar_dos_numeros_parametro_y_retorno(5,10);
+#print(f"El resultado de la suma es: {suma}");
 
 
 
