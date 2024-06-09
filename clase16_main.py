@@ -54,36 +54,36 @@ funciones.division_de_dos_numeros(num1,num2);
 lista_productos=["hacha","martillo","tornillo","esmeril"];
 while True:
     
-    print("Bienvenido a la Ferretería!!");
+    print("Bienvenido a la Ferretería!!\n");
     print("Elija una de las siguientes opciones");
     print("1.Agregar productos");
     print("2.Mostrar los productos");
     print("3.Buscar productos");
     print("4.Eliminar un producto/s");
+    print("5.Salir del programa");
     try:
-        opcion=input("Ingresa tu opción: ");
+        opcion=input("Ingresa tu opción: \n");
     except:
-        print("La opción ingresada no es válida, intentalo nuevamente...");
+        print("La opción ingresada no es válida, intentalo nuevamente...\n");
     else:
         if opcion=="1":
             print("Elegiste agregar un producto");
-            producto_nuevo=input("Ingresa el producto que deseas agregar");
-            if producto_nuevo not in lista_productos:
-                funciones.agregar_productos(producto_nuevo);
-            else:
-                print("El producto ya se encuentra en la lista, ingrese otro!");
+            funciones.agregar_productos();
         elif opcion=="2":
             funciones.mostrar_productos();
         elif opcion=="3":
             producto=input("Ingrese el producto que desea buscar: ");
             funciones.buscar_productos(producto);
         elif opcion=="4":
-            producto=input("Ingrese el producto que desea eliminar: ")
-            funciones.eliminar_productos(producto);
-            
-def eliminar_producto():
-    print()
+                funciones.eliminar_productos();
+        elif opcion=="5":
+            print("Saliendo del programa...");
+            break;
+        else:
+            print("La opción ingresada no es válida, intentalo nuevamente");
 
 """
-Utilizando la función de buscar producto se debe hacer la de eliminarlo si es que está dentro de la lista. (utilizando return)
+Utilizando la función de buscar producto se debe hacer la de eliminarlo si es que está dentro de la lista. (utilizando return) 
+
+#no entendí esta parte :c
 """

@@ -23,12 +23,15 @@ def division_de_dos_numeros(num1,num2):
 #Función para eliminar productos.
 
 
-lista_productos=["hacha","martillo","tornillo","esmeril"];
+lista_productos=["hacha","tornillo","esmeril"];
 
 def agregar_productos():
-    producto=input("Ingresa un producto");
-    lista_productos.append(producto);
-    print("El producto se ingresó correctamente.");
+    producto=input("Ingresa un producto: ");
+    if producto not in lista_productos:
+        lista_productos.append(producto);
+        print("El producto se ingresó correctamente.");
+    else:
+        print("El producto ya se encuentra dentro de la lista, no se agregó nada.");
 
 def mostrar_productos():
     print(f"La lista de productos es: {lista_productos}");
@@ -42,8 +45,13 @@ def buscar_productos(producto):
         return False;
 
 def eliminar_productos():
-    producto=input("Ingresa un producto para eliminarlo");
-    lista_productos.remove(producto);
-    print(f"El producto {producto} se ha eliminado");
+    producto=input("Ingresa un producto para eliminarlo: ");
+    if producto in lista_productos:
+        lista_productos.remove(producto);
+        print(f"El producto {producto} se ha eliminado");
+        return True;
+    else:
+        print("El producto no existe, por lo tanto no se ha eliminado nada.");
+        return False;
 
 
